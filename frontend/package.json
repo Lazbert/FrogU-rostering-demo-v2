@@ -10,11 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@handsontable/react": "^13.1.0",
+    "@mui/material": "^5.14.18",
     "@types/node": "^20.9.1",
+    "ag-grid-react": "^30.2.1",
+    "handsontable": "^13.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@ag-grid-community/react": "^30.2.1",
+    "@mui/x-data-grid": "^6.18.1",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
