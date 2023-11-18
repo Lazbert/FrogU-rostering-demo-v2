@@ -96,10 +96,10 @@ function App() {
             <FlightTable setFlight={setFlight} />
           </div>
           <div className="w-full flex flex-col">
-            <div className="h-full flex flex-col gap-2 p-4 border border-black/20 rounded-lg">
+            <div className="h-full flex flex-col gap-2 p-4 rounded-lg bg-[#E5C6F3]">
               <div className="flex justify-between">
                 <span className="text-[24px] font-medium">Recommendations</span>
-                <button className="mt-auto ml-auto px-4 py-2 rounded-[25px] bg-darkGreen text-white">Confirm</button>
+                <button className="mt-auto ml-auto px-4 py-2 rounded-[25px] bg-[#24BCDC] text-white">Confirm</button>
               </div>
               <div className="flex justify-center gap-2">
                 <div className="flex flex-col items-center gap-1">

@@ -6,7 +6,7 @@
 @layer base {
   body {
     font-family: "Poppins", sans-serif;
-    background-color: #F1F4F1;
+    background-color: #F9F6FA;
   }
 }
 
@@ -32,4 +32,36 @@
 .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
   margin: 0 !important;
   border-top: 1px solid #e5e7eb
+}
+
+.css-t89xny-MuiDataGrid-columnHeaderTitle {
+  font-weight: 600 !important;
+}
+
+.scheduler_default_timeheadergroup_inner {
+  font-size: 18px;
+  font-weight: 600;
+  background-color: antiquewhite;
+}
+
+.scheduler_default_timeheadercol_inner,
+.scheduler_default_corner_inner,
+.scheduler_default_rowheader_inner {
+  background-color: antiquewhite;
+}
+
+.scheduler_default_cell.scheduler_default_cell_business {
+  background-color: #EAF3FA !important;
+}
+
+.scheduler_default_cell {
+  background-color: #E3EBFE !important;
+}
+
+.scheduler_default_event_bar_inner {
+  background-color: #742C94 !important;
+}
+
+.scheduler_default_event_bar {
+  background-color: #24BCDC !important;
 }
