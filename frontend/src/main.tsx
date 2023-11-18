@@ -86,8 +86,15 @@ const recommendedPilot2: Array<PilotProps> = [
 
 function App() {
   const [flight, setFlight] = useState<FlightProps>()
+  const [completedFlight, setCompletedFlight] = useState(false)
   const [pilot1, setPilot1] = useState<PilotProps>()
   const [pilot2, setPilot2] = useState<PilotProps>()
+
+  const confirmButtonHandler = () => {
+    if (pilot1 && pilot2) {
+        setCompletedFlight(true)
+    }
+  }
 
   return (
     <div className="h-screen w-screen p-10">
@@ -101,7 +108,7 @@ function App() {
                 <div className="h-full flex flex-col gap-2 p-4 rounded-lg bg-[#E5C6F3]">
                   <div className="flex justify-between">
                     <span className="text-[24px] font-medium">Recommendations</span>
-                    <button className="mt-auto ml-auto px-4 py-2 rounded-[25px] bg-[#24BCDC] text-white">Confirm</button>
+                    <button onClick={confirmButtonHandler} className="mt-auto ml-auto px-4 py-2 rounded-[25px] bg-[#24BCDC] text-white">Confirm</button>
                   </div>
                   <div className={"flex justify-center gap-2"}>
                     <div className="flex flex-col items-center gap-1">
@@ -123,7 +130,7 @@ function App() {
             }
           </div>
         </div>
-        <PilotScheduler />
+        <PilotScheduler finishedFlight={completedFlight ? flight : undefined} />
       </div>
     </div>
   )

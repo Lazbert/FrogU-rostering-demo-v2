@@ -1,6 +1,10 @@
 import { FlightProps } from "./FlightTable"
 import { DayPilotScheduler } from "daypilot-pro-react"
 
+interface PilotSchedulerProps {
+    finishedFlight: FlightProps | undefined
+}
+
 const pilots = [
     { name: "Stevie Barton", id: "0" },
     { name: "Frederic Gates", id: "1" },
@@ -53,7 +57,14 @@ const rosteredFlights: Array<FlightProps> = [
     }
 ]
 
-export const PilotScheduler: React.FC = () => {
+export const PilotScheduler: React.FC<PilotSchedulerProps> = ({
+    finishedFlight
+}) => {
+    var rosteredFlightsWithNewFlight = undefined;
+    if (finishedFlight) {
+        rosteredFlightsWithNewFlight = [...rosteredFlights, finishedFlight]
+    }
+
     return (
         <div className="h-max w-full flex-grow">
             <DayPilotScheduler
@@ -68,15 +79,15 @@ export const PilotScheduler: React.FC = () => {
                     { groupBy: "Month" },
                     { groupBy: "Day", format: "d" }
                 ]}
-                events={rosteredFlights.map((flight) => {  // convert flights to events on scheduler
+                events={rosteredFlightsWithNewFlight?.map((flight, ind) => {  // convert flights to events on scheduler
                     return {
-                        id: flight.id,
+                        id: ind,
                         text: `${flight.arrivalIATA} ${flight.flightNumber} ${flight.airplaneCode}`,
                         start: flight.departureTime.toISOString().substring(0, 19),
                         end: flight.arrivalTime.toISOString().substring(0, 19),
                         resource: flight.pilotId,
                         barColor: "#0E4C72"
-                    }
+                    } 
                 })}
             />
         </div>
