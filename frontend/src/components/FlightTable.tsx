@@ -106,8 +106,9 @@ export const FlightTable: React.FC<FlightTableProps> = ({
 }) => {
     
     return (
-        <div className="w-[55%]">
+        <div className="w-full bg-[#F6F4EF]">
             <DataGrid 
+                className="rounded-[20px]"
                 checkboxSelection 
                 disableRowSelectionOnClick 
                 rows={flightsData}
