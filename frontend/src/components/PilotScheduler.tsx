@@ -58,7 +58,7 @@ export const PilotScheduler: React.FC = () => {
         <div className="h-max w-full flex-grow">
             <DayPilotScheduler
                 heightSpec={"Parent100Pct"}
-                rowMinHeight={40}
+                rowMinHeight={48}
                 cellWidthSpec={"Auto"}
                 resources={pilots}
                 startDate={"2023-11-01"}

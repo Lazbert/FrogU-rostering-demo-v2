@@ -29,3 +29,7 @@
   background-color: #F1F4F1;
 }
 
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+  margin: 0 !important;
+  border-top: 1px solid #e5e7eb
+}
