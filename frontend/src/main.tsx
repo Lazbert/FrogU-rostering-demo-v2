@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import FlightTable from '@/components/FlightTable'
 import { FlightProps } from "@/components/FlightTable"
+import PilotScheduler from "./components/PilotScheduler"
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -16,10 +17,11 @@ function App() {
   console.log(flight)
   return (
     <div className="h-screen w-screen p-10">
-      <div className="flex flex-col gap-4">
+      <div className="h-full flex flex-col gap-8">
         <div className="h-[40%] flex">
           <FlightTable setFlight={setFlight} />
         </div>
+        <PilotScheduler />
       </div>
     </div>
   )
