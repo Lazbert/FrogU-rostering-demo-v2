@@ -1,0 +1,70 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  getFlight(flightNumber: String): Flight
+  getPilot(displayName: String): Pilot
+}
+
+type Mutation {
+  upsertFlight(flight: FlightInput!): Flight
+  upsertPilot(pilot: PilotInput!): Pilot
+}
+
+type Flight {
+  id: ID!
+  flightNumber: String!
+  airplaneType: String!
+  airplaneCOde: String!
+  departureIATA: String!
+  arrivalIATA: String!
+  departureTime: String!
+  arrivalTime: String!
+  totalMiles: Int!
+  pilots: [Pilot]
+}
+
+type Pilot {
+  id: ID!
+  displayName: String!
+  age: Int!
+  seniority: Int!
+  position: String!
+  preference: [Preference]
+}
+
+type Preference {
+  id: ID!
+  birthday: String
+  mostPreferredDest: String
+  leastPreferredDest: String
+}
+
+##################### Input #############################
+input FlightInput {
+  flightNumber: String!
+  airplaneType: String!
+  airplaneCOde: String!
+  departureIATA: String!
+  arrivalIATA: String!
+  departureTime: String!
+  arrivalTime: String!
+  totalMiles: Int!
+  pilots: [PilotInput]
+}
+
+input PilotInput {
+  displayName: String!
+  age: Int!
+  seniority: Int!
+  position: String!
+  preference: [PreferenceInput]
+}
+
+input PreferenceInput {
+  birthday: String
+  mostPreferredDest: String
+  leastPreferredDest: String
+}
