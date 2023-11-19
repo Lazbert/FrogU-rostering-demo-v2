@@ -30,7 +30,7 @@ const flightsData: Array<FlightProps> = [
         departureTime: new Date(2023, 10, 1, 1, 30),
         arrivalTime: new Date(2023, 10, 5, 6, 30),
         totalMiles: 1537,
-        pilotId: "0",
+        pilotId: "1",
     },
     {
         id: "1",
@@ -42,7 +42,7 @@ const flightsData: Array<FlightProps> = [
         departureTime: new Date(2023, 10, 14, 8, 40),
         arrivalTime: new Date(2023, 10, 19, 14, 10),
         totalMiles: 2156,
-        pilotId: "1",
+        pilotId: "0",
     },
     {
         id: "2",

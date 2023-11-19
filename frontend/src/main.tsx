@@ -6,7 +6,6 @@ import FlightTable from '@/components/FlightTable'
 import { FlightProps } from "@/components/FlightTable"
 import PilotScheduler from "./components/PilotScheduler"
 import PilotSelection from "./components/PilotSelection"
-import cx from "classnames"
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -26,15 +25,6 @@ export interface PilotProps {
 
 const recommendedPilot1: Array<PilotProps> = [
   {
-    id: "0",
-    displayName: "Stevie Barton",
-    age: 43,
-    seniority: 600,
-    position: "Captain",
-    contactEmail: "stevie@outlook.com",
-    baseCountry: "United Kingdom"
-  },
-  {
     id: "1",
     displayName: "Frederic Gates",
     age: 52,
@@ -42,6 +32,15 @@ const recommendedPilot1: Array<PilotProps> = [
     position: "Captain",
     contactEmail: "frederic@outlook.com",
     baseCountry: "France"
+  },
+  {
+    id: "0",
+    displayName: "Stevie Barton",
+    age: 43,
+    seniority: 600,
+    position: "Captain",
+    contactEmail: "stevie@outlook.com",
+    baseCountry: "United Kingdom"
   },
   {
     id: "2",
@@ -56,8 +55,17 @@ const recommendedPilot1: Array<PilotProps> = [
 
 const recommendedPilot2: Array<PilotProps> = [
   {
+    id: "5",
+    displayName: "Lacie Carson",
+    age: 43,
+    seniority: 985,
+    position: "First Officer",
+    contactEmail: "lacie@outlook.com",
+    baseCountry: "Italy"
+  },
+  {
     id: "0",
-    displayName: "Holly Vaughan",
+    displayName: "Ayub Underwood",
     age: 37,
     seniority: 480,
     position: "First Officer",
@@ -66,21 +74,12 @@ const recommendedPilot2: Array<PilotProps> = [
   },
   {
     id: "1",
-    displayName: "Philip Dale",
+    displayName: "Alia Hayden",
     age: 42,
     seniority: 876,
     position: "First Officer",
     contactEmail: "philip@outlook.com",
     baseCountry: "Japan"
-  },
-  {
-    id: "2",
-    displayName: "Lacie Carson",
-    age: 43,
-    seniority: 985,
-    position: "First Officer",
-    contactEmail: "lacie@outlook.com",
-    baseCountry: "Italy"
   },
 ]
 

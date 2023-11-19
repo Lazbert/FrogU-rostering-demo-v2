@@ -44,7 +44,7 @@ const rosteredFlights: Array<FlightProps> = [
         pilotId: "4",
     },
     {
-        id: "5",
+        id: "6",
         flightNumber: "T555",
         airplaneType: "Airbus",
         airplaneCode: "A320NEO",
@@ -53,7 +53,7 @@ const rosteredFlights: Array<FlightProps> = [
         departureTime: new Date(2023, 10, 8, 8, 40),
         arrivalTime: new Date(2023, 10, 13, 14, 10),
         totalMiles: 3191,
-        pilotId: "5",
+        pilotId: "6",
     }
 ]
 
@@ -62,7 +62,19 @@ export const PilotScheduler: React.FC<PilotSchedulerProps> = ({
 }) => {
     var rosteredFlightsWithNewFlight = undefined;
     if (finishedFlight) {
-        rosteredFlightsWithNewFlight = [...rosteredFlights, finishedFlight]
+        rosteredFlightsWithNewFlight = [...rosteredFlights, finishedFlight, {
+            id: "5",
+            flightNumber: "O134",
+            airplaneType: "Airbus",
+            airplaneCode: "A320",
+            departureIATA: "HKG",
+            arrivalIATA: "KIX",
+            departureTime: new Date(2023, 10, 1, 1, 30),
+            arrivalTime: new Date(2023, 10, 5, 6, 30),
+            totalMiles: 1537,
+            pilotId: "5",
+        },]
+        console.log(rosteredFlightsWithNewFlight)
     }
 
     return (
@@ -79,9 +91,18 @@ export const PilotScheduler: React.FC<PilotSchedulerProps> = ({
                     { groupBy: "Month" },
                     { groupBy: "Day", format: "d" }
                 ]}
-                events={rosteredFlightsWithNewFlight?.map((flight, ind) => {  // convert flights to events on scheduler
+                events={rosteredFlightsWithNewFlight ? rosteredFlightsWithNewFlight.map((flight) => {  // convert flights to events on scheduler
                     return {
-                        id: ind,
+                        id: flight.pilotId,
+                        text: `${flight.arrivalIATA} ${flight.flightNumber} ${flight.airplaneCode}`,
+                        start: flight.departureTime.toISOString().substring(0, 19),
+                        end: flight.arrivalTime.toISOString().substring(0, 19),
+                        resource: flight.pilotId,
+                        barColor: "#0E4C72"
+                    } 
+                }) : rosteredFlights.map((flight) => {
+                    return {
+                        id: flight.pilotId,
                         text: `${flight.arrivalIATA} ${flight.flightNumber} ${flight.airplaneCode}`,
                         start: flight.departureTime.toISOString().substring(0, 19),
                         end: flight.arrivalTime.toISOString().substring(0, 19),
